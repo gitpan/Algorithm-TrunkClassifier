@@ -1,6 +1,6 @@
 ---
 name: Algorithm-TrunkClassifier
-version: v1.0.0
+version: v1.0.1
 author:
 abstract: Implementation of the Decision Trunk Classifier algorithm
 license: unrestricted
@@ -17,22 +17,22 @@ meta-spec:
 provides:
   Algorithm::TrunkClassifier:
     file: lib/Algorithm/TrunkClassifier.pm
-    version: v1.0.0
+    version: v1.0.1
   Algorithm::TrunkClassifier::Classification:
     file: lib/Algorithm/TrunkClassifier/Classification.pm
-    version: v1.0.0
+    version: v1.0.1
   Algorithm::TrunkClassifier::CommandProcessor:
     file: lib/Algorithm/TrunkClassifier/CommandProcessor.pm
-    version: v1.0.0
+    version: v1.0.1
   Algorithm::TrunkClassifier::DataWrapper:
     file: lib/Algorithm/TrunkClassifier/DataWrapper.pm
-    version: v1.0.0
+    version: v1.0.1
   Algorithm::TrunkClassifier::DecisionTrunk:
     file: lib/Algorithm/TrunkClassifier/DecisionTrunk.pm
-    version: v1.0.0
+    version: v1.0.1
   Algorithm::TrunkClassifier::FeatureSelection:
     file: lib/Algorithm/TrunkClassifier/FeatureSelection.pm
-    version: v1.0.0
+    version: v1.0.1
   Algorithm::TrunkClassifier::Util:
     file: lib/Algorithm/TrunkClassifier/Util.pm
-    version: v1.0.0
+    version: v1.0.1

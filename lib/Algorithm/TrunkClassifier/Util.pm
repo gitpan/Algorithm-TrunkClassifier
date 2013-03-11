@@ -3,7 +3,7 @@ package Algorithm::TrunkClassifier::Util;
 use warnings;
 use strict;
 
-our $VERSION = 'v1.0.0';
+our $VERSION = 'v1.0.1';
 
 #Description: Sorts two arrays in accending order based on values in the first
 #Parameters: (1) Numerical array reference, (2) second array reference

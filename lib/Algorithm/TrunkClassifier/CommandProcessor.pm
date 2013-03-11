@@ -3,7 +3,7 @@ package Algorithm::TrunkClassifier::CommandProcessor;
 use warnings;
 use strict;
 
-our $VERSION = 'v1.0.0';
+our $VERSION = 'v1.0.1';
 
 my %commands;
 

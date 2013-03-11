@@ -5,8 +5,7 @@
  *      Author: Wolfcastle
  *
  *  Description
- *		This library implements the independent t-test and
- *		Maximum Class Polarization (MCP) feature selection methods
+ *		This library implements the independent t-test
  */
 
 #include <stdlib.h>

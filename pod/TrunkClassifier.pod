@@ -428,6 +428,7 @@ Indicates that output files were not writable in the output folder.
 =head1 SEE ALSO
 
 The publication describing the algorithm can be found in PubMed by this link:
+L<http://www.ncbi.nlm.nih.gov/pubmed?Db=pubmed&Cmd=DetailsSearch&Term=23467331%5Buid%5D>
 
 =head1 EXPORT
 

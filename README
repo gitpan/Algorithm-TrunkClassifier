@@ -1,4 +1,4 @@
-TrunkClassifier version v1.0.0
+TrunkClassifier version v1.0.1
 ============================
 
 This Perl module is the implementation of the Decision Trunk Classifier algorithm. It is composed of
@@ -14,6 +14,11 @@ terminal and type the following:
    perl Build.PL
    ./Build
    sudo ./Build install
+
+To install in Windows, open a DOS prompt and type the following:
+
+   cpan
+   install Algorithm::TrunkClassifier
 
 DEPENDENCIES
 

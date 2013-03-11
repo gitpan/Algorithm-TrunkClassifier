@@ -5,7 +5,7 @@ use strict;
 
 use POSIX;
 
-our $VERSION = "v1.0.0";
+our $VERSION = "v1.0.1";
 
 my $NULL_CLASS = "#NA";
 my $PROSPECT_SAMPLES = "samples";
@@ -318,10 +318,12 @@ sub readExpData($ $ $ $ $){
 			die "Number of samples with $className class\n$classOne: $classOneCount\n$classTwo: $classTwoCount\n";
 		}
 		elsif($prospect eq $PROSPECT_PROBES){
-			die "Number of probes in dataset: ", scalar(@dataMatrix);
+			my $numProbes = scalar(@dataMatrix);
+			die "Number of probes in dataset: $numProbes\n";
 		}
 		elsif($prospect eq $PROSPECT_CLASSES){
-			die "Classes in the dataset: ", keys(%classes);
+			my @classKeys = keys(%classes);
+			die "Classes in the dataset: @classKeys\n";
 		}
 	}
 	$self->{"colnames"} = \@incSampleNames;

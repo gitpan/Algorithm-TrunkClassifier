@@ -9,7 +9,7 @@ use Algorithm::TrunkClassifier::DataWrapper;
 use Algorithm::TrunkClassifier::Classification;
 require Exporter;
 
-our $VERSION = 'v1.0.0';
+our $VERSION = 'v1.0.1';
 
 our @ISA = qw(Exporter);
 our %EXPORT_TAGS = ( 'all' => [ qw(

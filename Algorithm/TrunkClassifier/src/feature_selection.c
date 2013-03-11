@@ -5,31 +5,10 @@
  *      Author: Wolfcastle
  *
  *  Description
- *		This library implements the independent t-test and
- *		Maximum Class Polarization (MCP) feature selection methods
+ *		This library implements the independent t-test
  */
 
 #include "feature_selection.h"
-
-/*
- * Description: Support function that checks if a sample belongs to a given class
- */
-int checkClass(char* sampleName, char* group){
-	unsigned int sameCount;
-	unsigned int samplePos;
-	unsigned int groupPos;
-	for(samplePos = 0; samplePos < strlen(sampleName) - (strlen(group) - 1); samplePos++){
-		sameCount = 0;
-		for(groupPos = 0; groupPos < strlen(group); groupPos++){
-			if(sampleName[samplePos + groupPos] == group[groupPos])
-				sameCount++;
-		}
-		if(sameCount == strlen(group)){
-			return 1;
-		}
-	}
-	return 0;
-}
 
 /*
 Description: Feature selection method that uses the independent t-test to select a feature
@@ -44,9 +23,9 @@ int indTTest(double** expData, int numFeatures, int numSamples, char** sampleNam
 	int numNormal = 0;
 	int numMalign = 0;
 	for(sample = 0; sample < numSamples; sample++){
-		if(checkClass(sampleNames[sample], NORMAL))
+		if(strcmp(sampleNames[sample], NORMAL) == 0)
 			numNormal++;
-		else if(checkClass(sampleNames[sample], MALIGN))
+		else if(strcmp(sampleNames[sample], MALIGN) == 0)
 			numMalign++;
 	}
 	
@@ -56,11 +35,11 @@ int indTTest(double** expData, int numFeatures, int numSamples, char** sampleNam
 	int normalCounter = 0;
 	int malignCounter = 0;
 	for(sample = 0; sample < numSamples; sample++){
-		if(checkClass(sampleNames[sample], NORMAL)){
+		if(strcmp(sampleNames[sample], NORMAL) == 0){
 			normalIndexes[normalCounter] = sample;
 			normalCounter++;
 		}
-		else if(checkClass(sampleNames[sample], MALIGN)){
+		else if(strcmp(sampleNames[sample], MALIGN) == 0){
 			malignIndexes[malignCounter] = sample;
 			malignCounter++;
 		}
@@ -73,7 +52,7 @@ int indTTest(double** expData, int numFeatures, int numSamples, char** sampleNam
 	int bestFeature;
 	for(feature = 0; feature < numFeatures; feature++){
 
-		//Calcualte sum of normal samples
+		//Calculate sum of normal samples
 		double sumNormal = 0;
 		int normalBuffer;
 		for(sample = 0; sample < numNormal; sample++){

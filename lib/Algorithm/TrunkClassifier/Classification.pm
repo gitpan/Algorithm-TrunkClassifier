@@ -9,7 +9,7 @@ use Algorithm::TrunkClassifier::DecisionTrunk;
 use Algorithm::TrunkClassifier::Util;
 use POSIX;
 
-our $VERSION = "v1.0.0";
+our $VERSION = "v1.0.1";
 
 #Description: Function responsible for building decision trunks and classifying test samples using LOOCV
 #Parameters: (1) Package, (2) input dataset, (3) test dataset, (4) classification procedure, (5) split percent,
@@ -354,7 +354,7 @@ sub buildTrunk($ $ $ $ $ $ $){
 		my $higherDecision;
 		if($levelIndex < $levelLimit){
 		
-			#Lower quantile
+			#Lower quartile
 			$decisionBuffer = "";
 			for(my $classSample = 0; $classSample < $numSamples; $classSample++){
 				if($classVector[$classSample] ne $lowerClass){
@@ -376,7 +376,7 @@ sub buildTrunk($ $ $ $ $ $ $){
 			}
 			$lowerDecision = $decisionBuffer;
 			
-			#Higher quantile
+			#Higher quartile
 			$decisionBuffer = "";
 			for(my $classSample = $numSamples - 1; $classSample >= 0; $classSample--){
 				if($classVector[$classSample] ne $higherClass){
@@ -402,7 +402,7 @@ sub buildTrunk($ $ $ $ $ $ $){
 			$higherDecision = $decisionBuffer;
 		}
 		else{
-			#Do not use thresholds at last level of trunk
+			#Do not use quartiles at last level of trunk
 			$decisionBuffer = "";
 			for(my $classSample = 0; $buildSet->getNumSamples(); $classSample++){
 				if($classVector[$classSample] ne $lowerClass){
